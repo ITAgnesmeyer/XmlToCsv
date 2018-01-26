@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Microsoft\ILMerge\ILMerge.exe" /ndebug /copyattrs /targetplatform:4.0,"C:\Windows\Microsoft.NET\Framework64\v4.0.30319" /out:"bin\merged\XmlToCsv.exe" "bin\Release\XmlToCsv.exe" "bin\Release\CommandLine.dll" "bin\Release\Newtonsoft.Json.dll" "bin\Release\System.Console.dll" "bin\Release\System.Reflection.TypeExtensions.dll"
