@@ -31,7 +31,7 @@ Examples:
 
 	xmltocsv -i test.xml -o c:\temp
 
-The file "test.xml" will be converted to CSF-files in the folder "C:\temp"
+The file "test.xml" will be converted to CSV-files in the folder "C:\temp"
 
 ##### Sample 2 #####
 If the parameter -j/--json is given then the JSON-file will be convierted to the given -i file.
