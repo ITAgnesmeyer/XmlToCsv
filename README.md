@@ -1,10 +1,20 @@
+
+
 # XmlToCsv #
 
 Description:
 ----------
 
 XmlToCsv is a tool to convert XML-Files to CSV files.
-The CSV-files are seperated by ";".
+
+### Remarks ###
+The CSV-files are seperated by (;) and text-columns are Quoted by (").
+
+#### Text-columns will be cleaned: ####
+- NewLine will be removed. 
+- Quotes (") will be replaced with ('') 
+- (#) will be replaced with (*).
+
 
 
 Parameters
@@ -23,6 +33,8 @@ simly call:
 	<repository>\XmlToCsv\>xmltocsv
 
 The merged file will be written to the "merged" folder in the "bin" Directory
+
+
 
 Examples:
 ----------
