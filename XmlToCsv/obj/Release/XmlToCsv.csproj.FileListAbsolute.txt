@@ -1,0 +1,12 @@
+E:\DIMOWO-GIT\XmlToCsv\XmlToCsv\bin\Release\XmlToCsv.exe.config
+E:\DIMOWO-GIT\XmlToCsv\XmlToCsv\bin\Release\XmlToCsv.exe
+E:\DIMOWO-GIT\XmlToCsv\XmlToCsv\bin\Release\XmlToCsv.pdb
+E:\DIMOWO-GIT\XmlToCsv\XmlToCsv\bin\Release\CommandLine.dll
+E:\DIMOWO-GIT\XmlToCsv\XmlToCsv\bin\Release\Newtonsoft.Json.dll
+E:\DIMOWO-GIT\XmlToCsv\XmlToCsv\bin\Release\System.Console.dll
+E:\DIMOWO-GIT\XmlToCsv\XmlToCsv\bin\Release\System.Reflection.TypeExtensions.dll
+E:\DIMOWO-GIT\XmlToCsv\XmlToCsv\bin\Release\CommandLine.xml
+E:\DIMOWO-GIT\XmlToCsv\XmlToCsv\bin\Release\Newtonsoft.Json.xml
+E:\DIMOWO-GIT\XmlToCsv\XmlToCsv\obj\Release\XmlToCsv.csproj.CoreCompileInputs.cache
+E:\DIMOWO-GIT\XmlToCsv\XmlToCsv\obj\Release\XmlToCsv.exe
+E:\DIMOWO-GIT\XmlToCsv\XmlToCsv\obj\Release\XmlToCsv.pdb

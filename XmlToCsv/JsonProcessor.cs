@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Xml;
@@ -160,11 +161,23 @@ namespace XmlToCsv
                                     rowValue = string.Empty;
                                 string value = (string)rowValue;
                                 value = value.Replace(Environment.NewLine, "");
+#if DEBUG
+                                if (value.Contains("\""))
+                                    Debug.Print(value);
+
+                                if (value.Contains(";"))
+                                    Debug.Print(value);
+                                if(value.Contains("#"))
+                                    Debug.Print(value);
+#endif 
+                                value = value.Replace("\"", "''");
+                                value = value.Replace(";", ",");
+                                value = value.Replace("#", "*");
                                 //value = value.Replace("\r", "");
                                 rowValue = value;
                             }
 
-                            sb.Append(dataTableRow[columnName.Name]);
+                            sb.Append(rowValue);
                             if (valueType == typeof(string))
                                 sb.Append('"');
                             counter += 1;
