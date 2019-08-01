@@ -12,8 +12,10 @@ namespace XmlToCsv
             if (!GetOptions(args, options))
                 return 10;
 
-            JsonProcess jProcessor = new JsonProcess(options.OutputDirectorey, options.JsonFile);
-            jProcessor.XmlDocuemntPath = options.InputXmlFile;
+            JsonProcess jProcessor = new JsonProcess(options.OutputDirectorey, options.JsonFile, options.JsonFile)
+            {
+                XmlDocuemntPath = options.InputXmlFile
+            };
             jProcessor.LogEvent += OnLogEvnet;
             try
             {

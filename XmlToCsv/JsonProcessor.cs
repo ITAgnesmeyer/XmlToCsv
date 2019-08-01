@@ -13,6 +13,7 @@ namespace XmlToCsv
     public class JsonProcess
     {
         public string SourceJasonFile { get; set; }
+        public string JsonDocumentPath{get;set;}
         public string DestinationFolderPath { get; set; }
         public string JsonString { get; set; }
         public string LastMessage { get; set; }
@@ -20,10 +21,11 @@ namespace XmlToCsv
 
         public event EventHandler<LogEventArgs> LogEvent;
 
-        public JsonProcess(string destinationFolderPath, string sourceJasonFile)
+        public JsonProcess(string destinationFolderPath, string sourceJasonFile, string destinationJsonFile)
         {
             this.DestinationFolderPath = destinationFolderPath;
             this.SourceJasonFile = sourceJasonFile;
+            this.JsonDocumentPath = destinationFolderPath;
             this.XmlDocuemntPath = Path.Combine(this.DestinationFolderPath, "document.xml");
 
         }
@@ -48,6 +50,15 @@ namespace XmlToCsv
                 OnLogEvent("Error:" + e.Message);
                 return false;
             }
+        }
+
+        public void WriteXmlToJson()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(this.XmlDocuemntPath);
+            string json = JsonConvert.SerializeXmlNode(doc);
+            File.WriteAllText(this.JsonDocumentPath, json);
+
         }
 
         public void WriteJasonToXmlAndCsv()
@@ -91,6 +102,9 @@ namespace XmlToCsv
             }
         }
 
+
+
+
         private void JsonToXml(string text, bool packInRootObj = false)
         {
 
@@ -106,6 +120,7 @@ namespace XmlToCsv
 
 
             OnLogEvent("Convert JSON to XML");
+
             XmlDocument doc = JsonConvert.DeserializeObject<XmlDocument>(cont.ToString());
             OnLogEvent("Convert OK");
             OnLogEvent("save XML:" + this.XmlDocuemntPath);
