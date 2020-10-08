@@ -3,3 +3,6 @@
 ################################################################################
 
 /XmlToCsv/.vs/XmlToCsv/v16
+/XmlToCsv/bin/Debug
+/XmlToCsv/obj/Debug
+/XmlToCsv/packages

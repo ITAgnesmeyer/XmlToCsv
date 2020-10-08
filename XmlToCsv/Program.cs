@@ -1,10 +1,9 @@
 ﻿using System;
 using CommandLine;
-using JsonToXMLAndCSV;
 
 namespace XmlToCsv
 {
-    class Program
+    internal static class Program
     {
         public static int Main(string[] args)
         {
@@ -12,7 +11,7 @@ namespace XmlToCsv
             if (!GetOptions(args, options))
                 return 10;
 
-            JsonProcess jProcessor = new JsonProcess(options.OutputDirectorey, options.JsonFile, options.JsonFile)
+            JsonProcess jProcessor = new JsonProcess(options.OutputDirectorey, options.JsonFile)
             {
                 XmlDocuemntPath = options.InputXmlFile
             };
@@ -46,10 +45,10 @@ namespace XmlToCsv
             bool parsResult = false;
             var parser = new Parser(config => config.HelpWriter = Console.Out);
 
-            var result = parser.ParseArguments<Options>(args)
+            _ = parser.ParseArguments<Options>(args)
                 .WithParsed(x =>
                 {
-                    options.InputXmlFile  = x.InputXmlFile ;
+                    options.InputXmlFile = x.InputXmlFile;
                     options.OutputDirectorey = x.OutputDirectorey;
                     options.JsonFile = x.JsonFile;
                     parsResult = true;

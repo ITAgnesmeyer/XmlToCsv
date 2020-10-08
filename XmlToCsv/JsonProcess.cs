@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace XmlToCsv
 {
-    public class JsonProcess
+    public sealed class JsonProcess
     {
         public string SourceJasonFile { get; set; }
         public string JsonDocumentPath{get;set;}
@@ -21,10 +21,11 @@ namespace XmlToCsv
 
         public event EventHandler<LogEventArgs> LogEvent;
 
-        public JsonProcess(string destinationFolderPath, string sourceJasonFile, string destinationJsonFile)
+        public JsonProcess(string destinationFolderPath, string sourceJasonFile)
         {
             this.DestinationFolderPath = destinationFolderPath;
             this.SourceJasonFile = sourceJasonFile;
+       
             this.JsonDocumentPath = destinationFolderPath;
             this.XmlDocuemntPath = Path.Combine(this.DestinationFolderPath, "document.xml");
 
@@ -205,31 +206,9 @@ namespace XmlToCsv
         }
 
 
-        protected virtual void OnLogEvent(string message)
+        private void OnLogEvent(string message)
         {
             LogEvent?.Invoke(this, new LogEventArgs(message));
         }
-    }
-
-    public struct ColDescriptor
-    {
-        public string Name { get; set; }
-        public Type ColType { get; set; }
-
-        public ColDescriptor(string name, Type colType)
-        {
-            this.Name = name;
-            this.ColType = colType;
-        }
-    }
-
-    public class LogEventArgs : EventArgs
-    {
-        public LogEventArgs(string logMessage) : base()
-        {
-            this.LogMessage = logMessage;
-        }
-
-        public string LogMessage { get; }
     }
 }

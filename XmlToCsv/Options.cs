@@ -1,9 +1,6 @@
-using System.Text;
 using CommandLine;
-using CommandLine.Text;
-using Newtonsoft.Json;
 
-namespace JsonToXMLAndCSV
+namespace XmlToCsv
 {
     internal class Options
     {
